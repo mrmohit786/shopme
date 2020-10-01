@@ -27,7 +27,9 @@ export default function Home() {
   return (
     <Base title="TeeStore" description="Welcome to the Store">
       <div className="row text-center">
-        <h1 className="text-white">Products</h1>
+        <h1 style={{ color: "#000", fontSize: "2" + "rem" }}>
+          LATEST PRODUCTS
+        </h1>
         <div className="row">
           {products.map((product, index) => {
             return (

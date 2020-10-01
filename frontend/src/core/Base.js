@@ -5,28 +5,36 @@ import Menu from "../core/menu";
 const Base = ({
   title = "My Title",
   description = "My Description",
-  className = "bg-dark text-white p-4",
+  className = "text-white p-4",
   children,
 }) => (
   <div>
     <Menu />
     <div className="container-fluid">
-      <div className="jumbotron bg-dark text-white text-center">
+      <div className="jumbotron banner text-white text-center">
         <h2 className=" display-4"> {title} </h2>
         <p className="lead"> {description} </p>
       </div>
       <div className={className}> {children} </div>
     </div>
-    <footer className="footer bg-dark mt-auto py-3">
-      <div className="container-fluid bg-success text-white text-center py-3">
-        <h6>If you got any questions,feel free to reach out!</h6>
-        <button className="btn btn-warning btn-md">Contact Us</button>
+
+    <footer class="container-footer">
+      <div class="footer-details">
+        <ul>
+          <li>ABOUT US</li>
+          <li>CONTACT US</li>
+        </ul>
       </div>
-      <div className="container">
-        <span className="text-muted">
-          {" "}
-          <span className="text-white">MERN</span> Project
-        </span>
+      <div class="footer-socials">
+        <ul>
+          <li>SOCIAL</li>
+          <li>|</li>
+          <li>
+            <i class="fab fa-instagram-square"></i>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-twitter-square"></i>
+          </li>
+        </ul>
       </div>
     </footer>
   </div>

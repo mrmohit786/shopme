@@ -1,15 +1,137 @@
-.btn,
-.jumbotron,
-.nav :hover {
-  border-radius: 0px;
-}
-
 body {
-  background: #343a40;
+  margin: 0;
+  background-color: #d8d8d8;
+  font-family: "Montserrat", sans-serif;
 }
 
-footer {
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
+.container-nav {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #fff;
+}
+.nav-logo {
+  margin: auto;
+  padding: 0.5rem;
+}
+
+.nav-search {
+  margin: auto;
+  display: flex;
+}
+
+.nav-search > input {
+  border: 1px solid #000000a5;
+  border-right: none;
+  padding: 0.8rem;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #000000;
+  float: right;
+  width: 250px;
+}
+
+.nav-search > button {
+  border: 1px solid #000000;
+  background: #000000;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nav-menu {
+  margin: auto;
+  padding: 0.5rem;
+}
+
+.nav-menu > ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.nav-menu > ul > li {
+  padding: 0.5rem;
+}
+
+.nav-menu__signout {
+  color: red;
+}
+
+.container-footer {
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+}
+
+.footer-details > ul {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-details > ul > li {
+  text-align: center;
+  padding: 0 0.5rem;
+}
+.footer-socials {
+  display: flex;
+}
+
+.footer-socials > ul {
+  display: flex;
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.footer-socials > ul > li {
+  padding: 0.5rem 0.5rem;
+}
+
+.footer-socials > ul > li > i {
+  padding: 0 0.3rem;
+}
+
+.banner {
+  background-color: rgb(255, 136, 0);
+}
+
+@media (min-width: 660px) {
+  .container-nav {
+    flex-direction: row;
+  }
+
+  .container-footer {
+    flex-direction: row;
+  }
+  .footer-socials > ul {
+    flex-direction: row;
+  }
+
+  .footer-details > ul {
+    flex-direction: row;
+  }
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
 }

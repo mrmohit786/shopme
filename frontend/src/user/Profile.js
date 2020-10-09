@@ -4,7 +4,7 @@ import Base from "../core/Base";
 const Profile = () => {
   return (
     <Base title=" Profile Page">
-      <h1>This is profile apge</h1>
+      <h1>Profile Page</h1>
     </Base>
   );
 };

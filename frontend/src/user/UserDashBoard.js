@@ -17,9 +17,9 @@ const UserDashboard = () => {
   console.log(updateUser(_id, token, jsondata));
   return (
     <Base title={title} description="Here you can manage your account">
-      <div>
-        <p>Name : {name}</p>
-        <p>Email : {email}</p>
+      <div className="container text-center mt-5 mb-5 text-dark">
+        Name : <p className="h4">{name}</p>
+        Email : <p className="h4">{email}</p>
       </div>
     </Base>
   );

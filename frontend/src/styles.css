@@ -1,15 +1,11 @@
 body {
-  margin: 0;
   background-color: #d8d8d8;
-  font-family: "Montserrat", sans-serif;
 }
 
 .container-nav {
-  max-width: 100%;
-  margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #fff;
 }
 .nav-logo {
@@ -69,7 +65,7 @@ body {
 
 .container-footer {
   max-width: 100%;
-
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,7 +109,7 @@ body {
   background-color: rgb(255, 136, 0);
 }
 
-@media (min-width: 660px) {
+@media (min-width: 576px) {
   .container-nav {
     flex-direction: row;
   }

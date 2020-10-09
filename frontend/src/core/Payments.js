@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import DropIn from "braintree-web-drop-in-react";
 import { isAuthenticated } from "../auth/helper";
 import { getmeToken, processPayment } from "./helper/paymentHelper";
 import { cartEmpty } from "./helper/cartHelper";
+import { Link } from "react-router-dom";
 import { createOrder } from "./helper/orderHelper";
 const Payments = ({ products, setReload = (f) => f, reload = undefined }) => {
   const [info, setInfo] = useState({
@@ -38,11 +39,20 @@ const Payments = ({ products, setReload = (f) => f, reload = undefined }) => {
               onInstance={(instance) => (info.instance = instance)}
             />
             <button className="btn btn-block btn-success" onClick={onPurchase}>
-              Buy
+              Place Order
             </button>
           </div>
         ) : (
-          <h3>Please login or add something to cart</h3>
+          <h3>
+            {!isAuthenticated() && (
+              <Link
+                to="/signin"
+                className="text-white btn btn-block bg-primary"
+              >
+                Login to checkout
+              </Link>
+            )}
+          </h3>
         )}
       </div>
     );
@@ -95,10 +105,13 @@ const Payments = ({ products, setReload = (f) => f, reload = undefined }) => {
   };
 
   return (
-    <div>
-      <h3>Your total amount is {getAmount()}$</h3>
+    <Fragment>
+      <div className="row">
+        <p className="col-6 text-dark">Total Amount</p>
+        <p className="col-6 text-dark">₹{getAmount()}</p>
+      </div>
       {showDropIn()}
-    </div>
+    </Fragment>
   );
 };
 

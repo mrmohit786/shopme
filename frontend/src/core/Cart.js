@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
+import { Link } from "react-router-dom";
 import "../styles.css";
 import Base from "./Base";
 import Card from "./card";
@@ -33,17 +34,27 @@ const Cart = () => {
 
   return (
     <Base title="Your Cart" description="Ready to checkout">
-      <div className="row text-center">
-        <div className="col-6">
+      <div className="row d-flex justify-content-center text-center m-3">
+        <div className="col-sm-6 col-md-4">
           {products.length > 0 ? (
             loadAllProducts(products)
           ) : (
-            <h3>No product in cart</h3>
+            <Fragment>
+              <h5 className="text-dark">Your cart is empty!</h5>
+              <p className="text-dark">Add items to it now</p>
+              <Link to="/" className="btn btn-block btn-primary text-white">
+                Shop now
+              </Link>
+            </Fragment>
           )}
         </div>
-        <div className="col-6">
-          <h2>Checkout</h2>
-          <Payments products={products} setReload={setReload} />
+        <div className="col-sm-6 col-md-5">
+          {products.length > 0 && (
+            <Fragment>
+              <h5 className="text-dark ">Price Details</h5>
+              <Payments products={products} setReload={setReload} />
+            </Fragment>
+          )}
         </div>
       </div>
     </Base>

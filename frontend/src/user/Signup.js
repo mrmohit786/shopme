@@ -49,14 +49,16 @@ const Signup = () => {
   //SUCCESS MESSAGE
   const successMessage = () => {
     return (
-      <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
+      <div className="row m-3">
+        <div className="col-lg-6 col-md-8 col-sm-10 offset-lg-3 offset-md-2 offset-sm-1 text-left">
           <div
             className="alert alert-success"
             style={{ display: success ? "" : "none" }}
           >
-            New account was created successfully. Please
-            <Link to="/signin">Login Here</Link>
+            New account was created successfully. Please{" "}
+            <Link className="text-dark" to="/signin">
+              Login Here
+            </Link>
           </div>
         </div>
       </div>
@@ -66,8 +68,8 @@ const Signup = () => {
   //ERROR MESSAGE
   const errorMessage = () => {
     return (
-      <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
+      <div className="row m-3">
+        <div className="col-lg-6 col-md-8 col-sm-10 offset-lg-3 offset-md-2 offset-sm-1 text-left">
           <div
             className="alert alert-danger"
             style={{ display: error ? "" : "none" }}
@@ -82,11 +84,11 @@ const Signup = () => {
   //SIGNUPFORM
   const signUpForm = () => {
     return (
-      <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
+      <div className="row m-3">
+        <div className="col-lg-6 col-md-8 col-sm-10 offset-lg-3 offset-md-2 offset-sm-1 text-left">
           <form>
             <div className="form-group">
-              <label className="text-light">Name</label>
+              <label className="text-dark">Name</label>
               <input
                 onChange={handleChange("name")}
                 className="form-control"
@@ -95,7 +97,7 @@ const Signup = () => {
               />
             </div>
             <div className="form-group">
-              <label className="text-light">Email</label>
+              <label className="text-dark">Email</label>
               <input
                 onChange={handleChange("email")}
                 className="form-control"
@@ -104,7 +106,7 @@ const Signup = () => {
               />
             </div>
             <div className="form-group">
-              <label className="text-light">Password</label>
+              <label className="text-dark">Password</label>
               <input
                 onChange={handleChange("password")}
                 className="form-control"

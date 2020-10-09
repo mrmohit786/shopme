@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import "../styles.css";
-import { API } from "../backend";
 import Base from "./Base";
 import Card from "./card";
 import { getProducts } from "./helper/coreapicalls";
@@ -22,23 +21,19 @@ export default function Home() {
   useEffect(() => {
     loadAllProduct();
   }, []);
-
-  console.log("API is", API);
   return (
-    <Base title="TeeStore" description="Welcome to the Store">
-      <div className="row text-center">
-        <h1 style={{ color: "#000", fontSize: "2" + "rem" }}>
-          LATEST PRODUCTS
-        </h1>
-        <div className="row">
-          {products.map((product, index) => {
-            return (
-              <div key={index} className="col-4 mb-4">
-                <Card product={product} />
-              </div>
-            );
-          })}
-        </div>
+    <Base title="ShopME" description="Welcome to the Store">
+      <div className="p-4 bg-white">
+        <h5 className="text-dark mb-0 align-middle">Latest Products</h5>
+      </div>
+      <div className="row text-center m-3">
+        {products.map((product, index) => {
+          return (
+            <div key={index} className="col-sm-6 col-md-4 col-lg-3 mt-2 mb-2">
+              <Card product={product} />
+            </div>
+          );
+        })}
       </div>
     </Base>
   );

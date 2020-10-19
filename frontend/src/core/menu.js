@@ -22,6 +22,7 @@ const Menu = ({ history }) => (
       <ul>
         <li>
           <Link style={currentTab(history, "/")} to="/">
+            <i className="mr-1 fas fa-home"></i>
             HOME
           </Link>
         </li>
@@ -31,12 +32,14 @@ const Menu = ({ history }) => (
               to="/user/dashboard"
               style={currentTab(history, "/user/dashboard")}
             >
+              <i className="mr-1 fas fa-user"></i>
               DASHBOARD
             </Link>
           </li>
         )}
         <li>
           <Link style={currentTab(history, "/cart")} to="/cart">
+            <i className="mr-1 fas fa-shopping-cart"></i>
             CART
           </Link>
         </li>
@@ -47,7 +50,8 @@ const Menu = ({ history }) => (
               to="/admin/dashboard"
               style={currentTab(history, "/admin/dashboard")}
             >
-              ADMINISTRATION
+              <i className="align-self-center mr-1 fas fa-user-cog"></i>
+              ADMIN
             </Link>
           </li>
         )}
@@ -56,12 +60,14 @@ const Menu = ({ history }) => (
           <Fragment>
             <li>
               <Link to="/signup" style={currentTab(history, "/signup")}>
+                <i className="mr-1 fas fa-user-plus"></i>
                 SIGNUP
               </Link>
             </li>
 
             <li>
               <Link to="/signin" style={currentTab(history, "/signin")}>
+                <i className="mr-1 fas fa-sign-in-alt"></i>
                 SIGNIN
               </Link>
             </li>
@@ -77,7 +83,7 @@ const Menu = ({ history }) => (
                 });
               }}
             >
-              SIGNOUT
+              <i class="fas fa-sign-out-alt"></i> SIGNOUT
             </span>
           </li>
         )}

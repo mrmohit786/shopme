@@ -23,13 +23,13 @@ export default function Home() {
   }, []);
   return (
     <Base title="ShopME" description="Welcome to the Store">
-      <div className="p-4 bg-white">
+      <div className="p-3 bg-white">
         <h5 className="text-dark mb-0 align-middle">Latest Products</h5>
       </div>
-      <div className="row text-center m-3">
+      <div className="card-group m-2">
         {products.map((product, index) => {
           return (
-            <div key={index} className="col-sm-6 col-md-4 col-lg-3 mt-2 mb-2">
+            <div key={index} className="col-md-6 col-lg-4 col-xl-3 p-0 mb-2">
               <Card product={product} />
             </div>
           );

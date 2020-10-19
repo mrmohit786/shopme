@@ -131,3 +131,8 @@ a:-webkit-any-link {
   cursor: pointer;
   text-decoration: none;
 }
+
+.card-size {
+  height: 350px;
+  width: auto;
+}
